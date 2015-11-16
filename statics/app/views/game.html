@@ -1,0 +1,38 @@
+<div ng-controller="GameCtrl">
+    <div ng-show="step === 1">
+        <form name="form" ng-submit="startGame()">
+            When you click 'Start Game' we will show you series of slides. After specified number of steps you will be asked for prediction. Good luck!
+            <input ng-model="state.username" name="query" class="search-query" placeholder="Your name:" maxlength="30" required/>
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-default">Start Game</button>
+        </form>
+    </div>
+    <div ng-show="step === 2">
+        <div>
+            <div align="center">
+                <div align="center">Current step: {{index}}</div>
+                <img ng-src="{{img}}" height="100"/>
+            </div>
+        </div>
+    </div>
+    <div ng-show="step === 3">
+        <div>
+            <div align="center">
+                What will be next ?
+                <div ng-repeat="im in images track by $index">
+                    <button ng-click="endRound($index)"><img ng-src="{{im}}" height="100"/></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="step === 4">
+        <div>
+            <div align="center">
+                Thanks!
+                <div ng-show="maxRounds > round">
+                    Next round ?
+                    <button ng-click="startGame(round + 1)">Let's play!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

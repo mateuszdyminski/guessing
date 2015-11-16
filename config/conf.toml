@@ -1,0 +1,3 @@
+Host = ":9000"
+Statics = "statics"
+Results = "results.txt"
