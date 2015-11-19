@@ -38,6 +38,7 @@ angular.module('G').controller('GameCtrl', function($scope, $location, $timeout,
         var imageId = getRandomInt(0, noOfImages - 1)
         $scope.state.steps.push(imageId);
         $scope.img = CFG.rounds[$scope.round].images[imageId];
+        $scope.imgWidth = CFG.rounds[$scope.round].image_width;
         $timeout(function() {$scope.showImg(index + 1, noOfImages)}, CFG.rounds[$scope.round].sleep);
     }
 

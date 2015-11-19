@@ -2,6 +2,8 @@
     <div ng-show="step === 1">
         <form name="form" ng-submit="startGame()">
             When you click 'Start Game' we will show you series of slides. After specified number of steps you will be asked for prediction. Good luck!
+            </br>
+            </br>
             <input ng-model="state.username" name="query" class="search-query" placeholder="Your name:" maxlength="30" required/>
             <button type="submit" ng-disabled="form.$invalid" class="btn btn-default">Start Game</button>
         </form>
@@ -10,7 +12,7 @@
         <div>
             <div align="center">
                 <div align="center">Current step: {{index}}</div>
-                <img ng-src="{{img}}" height="100"/>
+                <img ng-src="{{img}}" width="{{imgWidth}}"/>
             </div>
         </div>
     </div>
