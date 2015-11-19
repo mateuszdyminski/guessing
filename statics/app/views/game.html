@@ -20,7 +20,7 @@
         <div>
             <div align="center">
                 What will be next ?
-                <div ng-repeat="im in images track by $index">
+                <div ng-repeat="im in answers track by $index">
                     <button ng-click="endRound($index)"><img ng-src="{{im}}" height="100"/></button>
                 </div>
             </div>

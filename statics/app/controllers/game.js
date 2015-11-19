@@ -20,6 +20,7 @@ angular.module('G').controller('GameCtrl', function($scope, $location, $timeout,
         $scope.step = 2;
 
         $scope.images = CFG.rounds[$scope.round].images;
+        $scope.answers = CFG.rounds[$scope.round].answers;
         var noOfImages = CFG.rounds[$scope.round].images.length;
 
         $scope.state.round = $scope.round;
